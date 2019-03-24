@@ -70,10 +70,33 @@
                             </div>
                             <!-- Contact Form Area -->
                             <div class="col-12 col-lg-7">
+                                @if (count($errors) > 0)
+    <div class="alert alert-danger">
+     <button type="button" class="close" data-dismiss="alert">×</button>
+     <ul>
+      @foreach ($errors->all() as $error)
+       <li>{{ $error }}</li>
+      @endforeach
+     </ul>
+    </div>
+   @endif
+   @if ($message = Session::get('success'))
+   <div class="alert alert-success alert-block">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+           <strong>{{ $message }}</strong>
+   </div>
+   @endif
                                 <div class="contact-form-area wow fadeInUp" data-wow-delay="500ms">
-                                    <form action="#" method="post">
-                                        <input type="text" class="form-control" id="name" placeholder="Name">
-                                        <input type="email" class="form-control" id="email" placeholder="E-mail">
+                                    <form action="{{url('sendemail/send')}}" method="post">
+                                         {{ csrf_field() }}
+                                        <div class="form-group">
+                        <label for="sender">Name:</label>
+                        <input type="text" class="form-control" id="email" name="name">
+                    </div>
+                                        <div class="form-group">
+                        <label for="sender">E-mail:</label>
+                        <input type="text" class="form-control" id="email" name="email">
+                    </div>
                                         <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
                                         <button class="btn academy-btn mt-30" type="submit">Contact Us</button>
                                     </form>

@@ -44,48 +44,50 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="#">Pages</a>
+                                <li><a href="{{route('welcome')}}">Home</a></li>
+                                    @auth
+                                    @if(Auth::user()->is_admin)
+                                <li><a href="">Admin</a></li>
+                                    @endif
+                                    @endauth
+                                <li><a href="">Pages</a>
                                     <ul class="dropdown">
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="about-us.html">About Us</a></li>
-                                        <li><a href="course.html">Course</a></li>
-                                        <li><a href="blog.html">Blog</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                        <li><a href="elements.html">Elements</a></li>
+                                        <li><a href="{{route('welcome')}}">Home</a></li>
+                                        <li><a href="{{route('about')}}">About Us</a></li>
+                                        <li><a href="{{route('courses')}}">Course</a></li>
+                                        
+                                        <li><a href="{{route('contact')}}">Contact</a></li>
+                                        <li><a href="{{route('welcome')}}">Elements</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">Mega Menu</a>
                                     <div class="megamenu">
                                         <ul class="single-mega cn-col-4">
-                                            <li><a href="#">Home</a></li>
-                                            <li><a href="#">Services &amp; Features</a></li>
-                                            <li><a href="#">Accordions and tabs</a></li>
-                                            <li><a href="#">Menu ideas</a></li>
-                                            <li><a href="#">Students Gallery</a></li>
+                                            <li><a href="{{route('welcome')}}">Home</a></li>
+                                            <li><a href="{{route('service')}}">Services &amp; Features</a></li>
+                                            
+                                            <li><a href="{{route('gallery')}}">Students Gallery</a></li>
                                         </ul>
                                         <ul class="single-mega cn-col-4">
-                                            <li><a href="#">Home</a></li>
-                                            <li><a href="#">Services &amp; Features</a></li>
-                                            <li><a href="#">Accordions and tabs</a></li>
-                                            <li><a href="#">Menu ideas</a></li>
-                                            <li><a href="#">Students Gallery</a></li>
+                                            <li><a href="{{route('welcome')}}">Home</a></li>
+                                            <li><a href="{{route('service')}}">Services &amp; Features</a></li>
+                                            
+                                            <li><a href="{{route('gallery')}}">Students Gallery</a></li>
                                         </ul>
                                         <ul class="single-mega cn-col-4">
-                                            <li><a href="#">Home</a></li>
-                                            <li><a href="#">Services &amp; Features</a></li>
-                                            <li><a href="#">Accordions and tabs</a></li>
-                                            <li><a href="#">Menu ideas</a></li>
-                                            <li><a href="#">Students Gallery</a></li>
+                                            <li><a href="{{route('welcome')}}">Home</a></li>
+                                            <li><a href="{{route('service')}}">Services &amp; Features</a></li>
+                                            
+                                            <li><a href="{{route('gallery')}}">Students Gallery</a></li>
                                         </ul>
                                         <div class="single-mega cn-col-4">
                                             <img src="img/bg-img/bg-1.jpg" alt="">
                                         </div>
                                     </div>
                                 </li>
-                                <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="course.html">Course</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="{{route('about')}}">About Us</a></li>
+                                <li><a href="{{route('courses')}}">Course</a></li>
+                                <li><a href="{{route('contact')}}">Contact</a></li>
                             </ul>
                         </div>
                         <!-- Nav End -->

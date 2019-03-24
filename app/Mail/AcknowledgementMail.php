@@ -7,11 +7,9 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class SendMail extends Mailable
+class AcknowledgementMail extends Mailable
 {
     use Queueable, SerializesModels;
-     //define a property name data to pass the data
-     public $data;
 
     /**
      * Create a new message instance.
@@ -20,7 +18,7 @@ class SendMail extends Mailable
      */
     public function __construct($data)
     {
-         $this->data = $data;
+        $this->data = $data;
     }
 
     /**
@@ -30,7 +28,7 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return $this->from('samanphoto@gmail.com')->subject('New Customer Equiry')->view('dynamic_email_template')->with('data', $this->data);
-
+        
+        return $this->from('samanphoto@gmail.com')->subject('New Customer Equiry')->view('acknowledgement_email_template')->with('data', $this->data);
     }
 }

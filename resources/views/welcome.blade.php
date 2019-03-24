@@ -79,48 +79,51 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul>
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="{{route('welcome')}}">Home</a></li>
+                                 @auth
+                                    @if(Auth::user()->is_admin)
+                                <li><a href="">Admin</a></li>
+                                    @endif
+                                    @endauth
                                 <li><a href="#">Pages</a>
                                     <ul class="dropdown">
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="about-us.html">About Us</a></li>
-                                        <li><a href="course.html">Course</a></li>
-                                        <li><a href="blog.html">Blog</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="{{route('welcome')}}">Home</a></li>
+                                        <li><a href="{{route('about')}}">About Us</a></li>
+                                        <li><a href="{{route('courses')}}">Course</a></li>
+                                        <li><a href="{{route('contact')}}">Contact</a></li>
                                         <li><a href="elements.html">Elements</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">Mega Menu</a>
                                     <div class="megamenu">
                                         <ul class="single-mega cn-col-4">
-                                            <li><a href="#">Home</a></li>
+                                            <li><a href="{{route('welcome')}}">Home</a></li>
                                             <li><a href="#">Services &amp; Features</a></li>
-                                            <li><a href="#">Accordions and tabs</a></li>
-                                            <li><a href="#">Menu ideas</a></li>
-                                            <li><a href="#">Students Gallery</a></li>
+                                           
+                                            
+                                            <li><a href="{{route('gallery')}}">Students Gallery</a></li>
                                         </ul>
                                         <ul class="single-mega cn-col-4">
-                                            <li><a href="#">Home</a></li>
-                                            <li><a href="#">Services &amp; Features</a></li>
-                                            <li><a href="#">Accordions and tabs</a></li>
-                                            <li><a href="#">Menu ideas</a></li>
-                                            <li><a href="#">Students Gallery</a></li>
+                                            <li><a href="{{route('welcome')}}">Home</a></li>
+                                            <li><a href="{{route('service')}}">Services &amp; Features</a></li>
+                                          
+                                      
+                                            <li><a href="{{route('gallery')}}">Students Gallery</a></li>
                                         </ul>
                                         <ul class="single-mega cn-col-4">
-                                            <li><a href="#">Home</a></li>
-                                            <li><a href="#">Services &amp; Features</a></li>
-                                            <li><a href="#">Accordions and tabs</a></li>
-                                            <li><a href="#">Menu ideas</a></li>
-                                            <li><a href="#">Students Gallery</a></li>
+                                            <li><a href="{{route('welcome')}}">Home</a></li>
+                                            <li><a href="{{route('service')}}">Services &amp; Features</a></li>
+                                            
+                                            <li><a href="{{route('gallery')}}">Students Gallery</a></li>
                                         </ul>
                                         <div class="single-mega cn-col-4">
-                                            <img src="img/bg-img/bg-1.jpg" alt="">
+                                            <img src="img/core-img/pic9.jpg" alt="">
                                         </div>
                                     </div>
                                 </li>
-                                <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="course.html">Course</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="{{route('about')}}">About Us</a></li>
+                                <li><a href="{{route('courses')}}">Course</a></li>
+                                <li><a href="{{route('contact')}}">Contact</a></li>
                             </ul>
                         </div>
                         <!-- Nav End -->
@@ -166,7 +169,7 @@
                         <div class="hero-slides-content">
                             <h4 data-animation="fadeInUp" data-delay="100ms">All the courses you need</h4>
                             <h2 data-animation="fadeInUp" data-delay="400ms">Wellcome to our <br>NIE University</h2>
-                            <a href="#" class="btn academy-btn" data-animation="fadeInUp" data-delay="700ms">Read More</a>
+                            <a href="{{route('about')}}" class="btn academy-btn" data-animation="fadeInUp" data-delay="700ms">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -361,7 +364,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="load-more-btn text-center wow fadeInUp" data-wow-delay="800ms">
-                    <a href="#" class="btn academy-btn">See More</a>
+                    <a href="{{route('about')}}" class="btn academy-btn">See More</a>
                 </div>
             </div>
         </div>
@@ -396,7 +399,7 @@
                             <i class="fa fa-star-o" aria-hidden="true"></i>
                         </div>
                         <p>Be a high qualified software engineer with our software engineering degree with Plymouth university.</p>
-                        <a href="#" class="btn academy-btn btn-sm">See More</a>
+                        <a href="{{route('software')}}" class="btn academy-btn btn-sm">See More</a>
                     </div>
                     <div class="popular-course-thumb bg-img" style="background-image: url(img/pic10.jpg);"></div>
                 </div>
@@ -416,7 +419,7 @@
                             <i class="fa fa-star-o" aria-hidden="true"></i>
                         </div>
                         <p>Be a high quality Management graduate with our BA(hons) Degree programm.</p>
-                        <a href="#" class="btn academy-btn btn-sm">See More</a>
+                        <a href="{{route('business')}}" class="btn academy-btn btn-sm">See More</a>
                     </div>
                     <div class="popular-course-thumb bg-img" style="background-image: url(img/bg-img/pic43.jpg);"></div>
                 </div>
@@ -436,7 +439,7 @@
                             <i class="fa fa-star-o" aria-hidden="true"></i>
                         </div>
                         <p>Come and join with us to make your dream of becoming a doctor .We provide high quality Education for you .</p>
-                        <a href="#" class="btn academy-btn btn-sm">See More</a>
+                        <a href="{{route('medicine')}}" class="btn academy-btn btn-sm">See More</a>
                     </div>
                     <div class="popular-course-thumb bg-img" style="background-image: url(img/bg-img/pic46.jpg);"></div>
                 </div>
@@ -456,7 +459,7 @@
                             <i class="fa fa-star-o" aria-hidden="true"></i>
                         </div>
                         <p>Come and enroll soon for our Interior design degree with Harvard university. </p>
-                        <a href="#" class="btn academy-btn btn-sm">See More</a>
+                        <a href="{{route('interior')}}" class="btn academy-btn btn-sm">See More</a>
                     </div>
                     <div class="popular-course-thumb bg-img" style="background-image: url(img/bg-img/pic45.jpg);"></div>
                 </div>
@@ -579,9 +582,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    
                 </div>
             </div>
         </div>

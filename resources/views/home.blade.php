@@ -78,12 +78,17 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul>
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="{{route('home')}}">Home</a></li>
+                                 @auth
+                                    @if(Auth::user()->is_admin)
+                                <li><a href="">Admin</a></li>
+                                    @endif
+                                    @endauth
                                 <li><a href="#">Pages</a>
                                     <ul class="dropdown">
-                                        <li><a href="index.html"> transcript</a></li>
-                                        <li><a href="about-us.html">E mail</a></li>
-                                        <li><a href="course.html">Appeals</a></li>
+                                        <li><a href="{{route('transcript')}}"> transcript</a></li>
+                                        <li><a href="{{route('email')}}">E mail</a></li>
+                                        <li><a href="{{route('appeals')}}">Appeals</a></li>
                                         <li><a href="blog.html">chat</a></li>
                                         <li><a href="contact.html">Enrollments</a></li>
 
@@ -92,25 +97,25 @@
                                 <li><a href="#">Your Modules</a>
                                     <div class="megamenu">
                                         <ul class="single-mega cn-col-4">
-                                            <li><a href="#">Home</a></li>
-                                            <li><a href="#">java</a></li>
-                                            <li><a href="#">Project management</a></li>
-                                            <li><a href="#">C++</a></li>
-                                            <li><a href="#">Ethics</a></li>
+                                            <li><a href="{{route('home')}}">Home</a></li>
+                                            <li><a href="{{route('lecturenotes')}}">java</a></li>
+                                            <li><a href="{{route('lecturenotes')}}">Project management</a></li>
+                                            <li><a href="{{route('lecturenotes')}}">C++</a></li>
+                                            <li><a href="{{route('lecturenotes')}}">Ethics</a></li>
                                         </ul>
                                         <ul class="single-mega cn-col-4">
-                                            <li><a href="#">Home</a></li>
-                                            <li><a href="#">J2EE</a></li>
-                                            <li><a href="#">API</a></li>
-                                            <li><a href="#">IP</a></li>
-                                            <li><a href="#">Design patterns</a></li>
+                                            <li><a href="{{route('lecturenotes')}}">Home</a></li>
+                                            <li><a href="{{route('lecturenotes')}}">J2EE</a></li>
+                                            <li><a href="{{route('lecturenotes')}}">API</a></li>
+                                            <li><a href="{{route('lecturenotes')}}">IP</a></li>
+                                            <li><a href="{{route('lecturenotes')}}">Design patterns</a></li>
                                         </ul>
                                         <ul class="single-mega cn-col-4">
-                                            <li><a href="#">Home</a></li>
-                                            <li><a href="#">QTC</a></li>
-                                            <li><a href="#">practicals</a></li>
-                                            <li><a href="#">C language</a></li>
-                                            <li><a href="#">C#</a></li>
+                                            <li><a href="#{{route('home')}}">Home</a></li>
+                                            <li><a href="{{route('lecturenotes')}}#">QTC</a></li>
+                                            <li><a href="{{route('lecturenotes')}}">practicals</a></li>
+                                            <li><a href="{{route('lecturenotes')}}">C language</a></li>
+                                            <li><a href="{{route('lecturenotes')}}">C#</a></li>
                                         </ul>
                                         <div class="single-mega cn-col-4">
                                             <img src="img/bg-img/bg-1.jpg" alt="">
@@ -118,7 +123,7 @@
                                     </div>
                                 </li>
                                 <li><a href="about-us.html">Chat</a></li>
-                                <li><a href="course.html">Attendance</a></li>
+                                <li><a href="{{route('attendance')}}">Attendance</a></li>
                                 <li><a href="contact.html">friends</a></li>
                             </ul>
                         </div>
@@ -217,9 +222,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    
                 </div>
             </div>
         </div>

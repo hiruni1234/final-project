@@ -51,3 +51,6 @@ if (token) {
 //     key: 'd45979aa88a8ea8b7761',
 //     cluster: 'ap2'
 // });
+ window.Dropzone = require('dropzone');
+ Dropzone.autoDiscover = false;
+

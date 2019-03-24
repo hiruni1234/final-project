@@ -3,6 +3,7 @@
 @section('pagename', 'Uni Life')
 
 @section('content')
+   
 
     <div class="row">
         <div class="col-md-12">
@@ -16,7 +17,7 @@
     </div>
     <div class="row">
         <div class="col-md-8">
-            <img src="{{ url('img/pic18.jpg') }}"style= "width: 700px; height: 500px" >
+            <img src="{{ url('img/pic18.jpg') }}"style= "width: 700px; height: 500px background-size: cover;" >
         </div>
 
         <div class="col-md-4">

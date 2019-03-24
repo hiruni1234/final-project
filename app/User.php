@@ -41,4 +41,9 @@ class User extends Authenticatable
         return $this->friendsOfMine->merge($this->friendOf);
     }
 
+    public function files()
+    {
+      return $this->hasMany(File::class);
+    }
+
 }
